@@ -64,6 +64,62 @@ ul { list-style: none; }
   z-index: 2;
 }
 
+.mobile-topbar {
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  z-index: 1080;
+}
+
+.mobile-topbar .navbar-brand {
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+
+.mobile-toggle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: #fff;
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-toggle-btn:hover,
+.mobile-toggle-btn:focus-visible {
+  color: #fff;
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow: none;
+}
+
+.mobile-offcanvas {
+  background: #0a0a0a;
+  color: var(--text);
+  border-right: 1px solid var(--border);
+  width: min(88vw, 360px);
+}
+
+.mobile-offcanvas .offcanvas-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-profile-image {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.mobile-sidebar-nav {
+  gap: 6px;
+}
+
+.mobile-top-spacer {
+  height: 72px;
+}
+
 /* ===================== SIDEBAR ===================== */
 .sidebar {
   width: var(--sidebar-w);
@@ -1452,19 +1508,13 @@ footer span {
   .about-grid {
     gap: 28px;
   }
+
+  .layout-wrapper {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: min(86vw, 340px);
-    left: -100vw;
-    transition: left 0.3s ease;
-    z-index: 200;
-  }
-
-  .sidebar.open { left: 0; }
-  .sidebar-overlay.active { display: block; }
-  .mobile-menu-btn { display: flex; }
   .main-content { margin-left: 0; padding: 24px 20px 60px; }
   section { padding: 64px 0; }
   .section-header { margin-bottom: 40px; }
@@ -1478,6 +1528,10 @@ footer span {
   .btn-primary, .btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+
+  #particle-canvas {
+    opacity: 0.18;
   }
 }
 
@@ -1496,5 +1550,13 @@ footer span {
     bottom: 10px;
     padding: 5px 10px;
     font-size: 10px;
+  }
+
+  .mobile-top-spacer {
+    height: 68px;
+  }
+
+  #particle-canvas {
+    display: none;
   }
 }
