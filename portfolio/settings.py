@@ -31,7 +31,7 @@ def _csv_setting(name, default):
     return [item.strip() for item in value.split(',') if item.strip()]
 
 
-ALLOWED_HOSTS = _csv_setting('ALLOWED_HOSTS', 'localhost,127.0.0.1,[::1],.ngrok-free.dev')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
