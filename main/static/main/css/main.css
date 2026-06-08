@@ -64,60 +64,8 @@ ul { list-style: none; }
   z-index: 2;
 }
 
-.mobile-topbar {
-  background: rgba(0, 0, 0, 0.92);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(18px) saturate(120%);
-  -webkit-backdrop-filter: blur(18px) saturate(120%);
-  z-index: 1080;
-}
-
-.mobile-topbar .navbar-brand {
-  font-size: 16px;
-  letter-spacing: -0.2px;
-}
-
-.mobile-toggle-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  color: #fff;
-  background: var(--surface);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-toggle-btn:hover,
-.mobile-toggle-btn:focus-visible {
-  color: #fff;
-  border-color: rgba(0, 212, 255, 0.35);
-  box-shadow: none;
-}
-
-.mobile-offcanvas {
-  background: #0a0a0a;
-  color: var(--text);
-  border-right: 1px solid var(--border);
-  width: min(88vw, 360px);
-}
-
-.mobile-offcanvas .offcanvas-header {
-  border-bottom: 1px solid var(--border);
-}
-
-.mobile-profile-image {
-  max-width: 220px;
-  margin: 0 auto;
-}
-
-.mobile-sidebar-nav {
-  gap: 6px;
-}
-
-.mobile-top-spacer {
-  height: 72px;
+.mobile-shell {
+  display: none;
 }
 
 /* ===================== SIDEBAR ===================== */
@@ -1515,6 +1463,29 @@ footer span {
 }
 
 @media (max-width: 768px) {
+  .mobile-shell {
+    display: block;
+    padding: 16px 16px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-profile-card {
+    max-width: none;
+    margin: 0;
+    padding: 20px 18px 24px;
+    gap: 18px;
+  }
+
+  .mobile-profile-image {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .mobile-sidebar-nav {
+    gap: 6px;
+  }
+
   .main-content { margin-left: 0; padding: 24px 20px 60px; }
   section { padding: 64px 0; }
   .section-header { margin-bottom: 40px; }
@@ -1536,7 +1507,8 @@ footer span {
 }
 
 @media (max-width: 480px) {
-  .main-content { padding: 20px 16px 52px; }
+  .mobile-shell { padding: 12px 12px 0; }
+  .main-content { padding: 18px 14px 52px; }
   section { padding: 52px 0; }
   .section-title { font-size: clamp(28px, 8vw, 36px); }
   .profile-name { font-size: 20px; }
@@ -1550,10 +1522,6 @@ footer span {
     bottom: 10px;
     padding: 5px 10px;
     font-size: 10px;
-  }
-
-  .mobile-top-spacer {
-    height: 68px;
   }
 
   #particle-canvas {
