@@ -1,0 +1,896 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Saran — Senior AI Software Engineer</title>
+  <meta name="description"
+    content="Muhammad Saran is a Senior AI Software Engineer specializing in LLMs, RAG pipelines, LangChain, MLOps, and intelligent AI agent systems." />
+  <meta name="keywords"
+    content="AI Engineer, LLM, RAG, LangChain, Python, MLOps, Prompt Engineering, Machine Learning" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}" />
+</head>
+
+<body>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+    <i class="ri-menu-3-line"></i>
+  </button>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Layout -->
+  <div class="layout-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="profile-card">
+
+        <!-- Profile Image -->
+        <div class="profile-image-wrap">
+          <img src="{% static 'main/images/IMG_0562 (1).jpg' %}" alt="Muhammad Saran" />
+          <div class="availability-badge">Available for Work</div>
+        </div>
+
+        <!-- Name & Title -->
+        <div>
+          <div class="profile-name">Muhammad Saran</div>
+          <span class="profile-title">Sr. AI Software Engineer</span>
+        </div>
+
+        <div class="card-divider"></div>
+
+        <!-- Info -->
+        <div class="info-list">
+          <div class="info-item">
+            <i class="ri-map-pin-2-fill"></i>
+            <span>Pakistan 🇵🇰</span>
+          </div>
+          <div class="info-item">
+            <i class="ri-mail-fill"></i>
+            <a href="mailto:post2msaran@gmail.com">post2msaran@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+923435249571">+92 343 524 9571</a>
+          </div>
+          <div class="info-item">
+            <i class="ri-code-s-slash-fill"></i>
+            <span>5+ Years Experience</span>
+          </div>
+        </div>
+
+        <div class="card-divider"></div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/Muhammad-Saran" target="_blank" class="social-link" title="GitHub"
+            id="social-github">
+            <i class="ri-github-fill"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/muhammad-saran-a401ab305/" target="_blank" class="social-link"
+            title="LinkedIn" id="social-linkedin">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+        </div>
+
+        <!-- Download CV -->
+        <a href="{% static 'main/images/CV-Muhammad-Saran.pdf' %}" class="btn-download" id="btn-download-cv" download="CV-Muhammad-Saran.pdf">
+          <i class="ri-download-2-line"></i> Download CV
+        </a>
+
+        <div class="card-divider"></div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+          <a href="#hero" class="active" id="nav-hero"><i class="ri-home-4-fill"></i> Home</a>
+          <a href="#about" id="nav-about"><i class="ri-user-4-fill"></i> About</a>
+          <a href="#resume" id="nav-resume"><i class="ri-file-list-3-fill"></i> Resume</a>
+          <a href="#services" id="nav-services"><i class="ri-apps-2-fill"></i> Services</a>
+          <a href="#projects" id="nav-projects"><i class="ri-code-box-fill"></i> Projects</a>
+          <a href="#skills" id="nav-skills"><i class="ri-bar-chart-fill"></i> Skills</a>
+          <a href="#testimonials" id="nav-testimonials"><i class="ri-chat-quote-fill"></i> Testimonials</a>
+          <a href="#contact" id="nav-contact"><i class="ri-send-plane-fill"></i> Contact</a>
+        </nav>
+
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+      <!-- ========== HERO ========== -->
+      <section id="hero">
+        <div class="hero-greeting reveal">
+          Hi there <span>👋</span>
+        </div>
+
+        <h1 class="hero-name reveal reveal-delay-1">
+          I'm <span class="gradient-text">Muhammad<br />Saran</span>
+        </h1>
+
+        <div class="hero-typing reveal reveal-delay-2">
+          <span class="typed-text"></span><span class="cursor"></span>
+        </div>
+
+        <p class="hero-bio reveal reveal-delay-3">
+          Building intelligent AI systems that go beyond demos — production-grade LLM applications, autonomous agents,
+          RAG pipelines, and end-to-end MLOps infrastructure. Turning cutting-edge research into real-world impact.
+        </p>
+
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn-primary" id="hero-view-projects">
+            <i class="ri-eye-line"></i> View Projects
+          </a>
+          <a href="#contact" class="btn-secondary" id="hero-contact-me">
+            <i class="ri-mail-send-line"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="hero-stats reveal reveal-delay-5">
+          <div class="stat-item">
+            <div class="stat-num count-up" data-target="5" data-suffix="+">0+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num count-up" data-target="40" data-suffix="+">0+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num count-up" data-target="15" data-suffix="+">0+</div>
+            <div class="stat-label">AI Models Deployed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num count-up" data-target="98" data-suffix="%">0%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========== ABOUT ========== -->
+      <section id="about">
+        <div class="section-header reveal">
+          <div class="section-label">Who I Am</div>
+          <h2 class="section-title">About <span>Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="reveal">
+              I'm a Senior AI Software Engineer with 5+ years of hands-on experience designing and deploying large-scale
+              AI systems. My work sits at the intersection of cutting-edge AI research and production engineering — I
+              don't just build proof-of-concepts, I ship systems that handle real traffic and solve real business
+              problems.
+            </p>
+            <p class="reveal reveal-delay-1">
+              My core expertise spans Large Language Models, Retrieval-Augmented Generation (RAG) architectures,
+              LangChain/LangGraph agent frameworks, and building the MLOps infrastructure that keeps AI systems
+              reliable, observable, and scalable in production.
+            </p>
+            <p class="reveal reveal-delay-2">
+              I've worked with startups and enterprise teams across fintech, healthtech, and SaaS — leading AI
+              initiatives from ideation through deployment and beyond.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item reveal reveal-delay-3">
+                <div class="highlight-icon">🧠</div>
+                <div class="highlight-content">
+                  <h4>LLM Architecture Expert</h4>
+                  <p>Designing multi-model pipelines, fine-tuning, and RLHF workflows at scale</p>
+                </div>
+              </div>
+              <div class="highlight-item reveal reveal-delay-4">
+                <div class="highlight-icon">⚙️</div>
+                <div class="highlight-content">
+                  <h4>Production-First Mindset</h4>
+                  <p>Every system I build ships with monitoring, CI/CD, and failover strategies</p>
+                </div>
+              </div>
+              <div class="highlight-item reveal reveal-delay-5">
+                <div class="highlight-icon">🚀</div>
+                <div class="highlight-content">
+                  <h4>End-to-End Ownership</h4>
+                  <p>From data pipelines and model training to API deployment and user feedback loops</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image-card reveal reveal-delay-2">
+            <img src="{% static 'main/images/profile.jpg' %}" alt="Muhammad Saran — AI Engineer" />
+            <div class="about-image-overlay"></div>
+            <div class="about-badge">
+              <div class="about-badge-icon">🤖</div>
+              <div class="about-badge-text">
+                <strong>AI Systems Builder</strong>
+                <span>LLMs · RAG · MLOps · Agents</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========== RESUME ========== -->
+      <section id="resume">
+        <div class="section-header reveal">
+          <div class="section-label">My Journey</div>
+          <h2 class="section-title">Resume &amp; <span>Experience</span></h2>
+        </div>
+
+        <div class="resume-tabs reveal">
+          <button class="resume-tab active" data-tab="experience-tab" id="tab-experience">💼 Experience</button>
+          <button class="resume-tab" data-tab="education-tab" id="tab-education">🎓 Education</button>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-content active" id="experience-tab">
+          <div class="timeline">
+
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2023 – Present</div>
+                <div class="timeline-role">Senior AI Software Engineer</div>
+                <div class="timeline-company">
+                  TechVault AI &nbsp;
+                  <span>🇵🇰 Remote</span>
+                </div>
+                <p class="timeline-desc">
+                  Leading the AI platform team building enterprise-grade RAG systems and autonomous LLM agents.
+                  Architected a multi-tenant AI assistant platform serving 50k+ users, reducing support tickets by 68%
+                  via intelligent document retrieval and GPT-4 inference pipelines.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">LangChain</span>
+                  <span class="tag">GPT-4</span>
+                  <span class="tag">RAG</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Pinecone</span>
+                  <span class="tag">AWS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal reveal-delay-1">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2021 – 2023</div>
+                <div class="timeline-role">AI/ML Engineer</div>
+                <div class="timeline-company">
+                  NeuralBridge Labs &nbsp;
+                  <span>🌍 Remote</span>
+                </div>
+                <p class="timeline-desc">
+                  Built end-to-end MLOps pipelines for NLP model training, evaluation, and deployment. Fine-tuned
+                  transformer models (BERT, T5, LLaMA) for domain-specific classification and generation tasks.
+                  Implemented CI/CD for model versioning using MLflow and Kubernetes.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">PyTorch</span>
+                  <span class="tag">HuggingFace</span>
+                  <span class="tag">MLflow</span>
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">GCP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal reveal-delay-2">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2019 – 2021</div>
+                <div class="timeline-role">Machine Learning Engineer</div>
+                <div class="timeline-company">
+                  DataForge Solutions &nbsp;
+                  <span>🇵🇰 Lahore</span>
+                </div>
+                <p class="timeline-desc">
+                  Developed ML models for predictive analytics, anomaly detection, and NLP-based text classification.
+                  Worked with cross-functional teams to integrate models into production Django/Flask APIs.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Scikit-learn</span>
+                  <span class="tag">TensorFlow</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-content" id="education-tab">
+          <div class="timeline">
+
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2015 – 2019</div>
+                <div class="timeline-role">Bachelor of Science — Computer Science</div>
+                <div class="timeline-company">
+                  FAST-NUCES &nbsp;
+                  <span>🎓 Pakistan</span>
+                </div>
+                <p class="timeline-desc">
+                  Specialized in Artificial Intelligence and Machine Learning. Final year thesis on "Attention
+                  Mechanisms in Neural Machine Translation". GPA: 3.7/4.0. Awarded merit scholarship for academic
+                  excellence.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">AI/ML</span>
+                  <span class="tag">Algorithms</span>
+                  <span class="tag">Data Structures</span>
+                  <span class="tag">Deep Learning</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal reveal-delay-1">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2022</div>
+                <div class="timeline-role">Deep Learning Specialization</div>
+                <div class="timeline-company">
+                  Coursera — deeplearning.ai &nbsp;
+                  <span>🏅 Certified</span>
+                </div>
+                <p class="timeline-desc">
+                  Completed Andrew Ng's 5-course Deep Learning Specialization covering CNNs, RNNs, transformers, and
+                  practical ML project structuring.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">CNN</span>
+                  <span class="tag">RNN</span>
+                  <span class="tag">Transformers</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal reveal-delay-2">
+              <div class="timeline-card">
+                <div class="timeline-date"><i class="ri-calendar-line"></i> 2023</div>
+                <div class="timeline-role">AWS Certified Machine Learning — Specialty</div>
+                <div class="timeline-company">
+                  Amazon Web Services &nbsp;
+                  <span>☁️ Certified</span>
+                </div>
+                <p class="timeline-desc">
+                  Certified in designing, building, training, and deploying ML models using AWS services including
+                  SageMaker, Bedrock, and related cloud infrastructure.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag">AWS SageMaker</span>
+                  <span class="tag">Bedrock</span>
+                  <span class="tag">Cloud ML</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========== SERVICES ========== -->
+      <section id="services">
+        <div class="section-header reveal">
+          <div class="section-label">What I Do</div>
+          <h2 class="section-title">My <span>Services</span></h2>
+          <p class="section-desc">End-to-end AI engineering services — from architecture design to production deployment
+            and monitoring.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card reveal">
+            <div class="service-icon">🧠</div>
+            <div class="service-title">LLM Application Development</div>
+            <p class="service-desc">Building production-ready LLM-powered applications with GPT-4, Claude, Gemini, and
+              open-source models. Custom chatbots, document Q&A systems, code assistants, and AI-native products.</p>
+            <div class="service-num">01</div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">🔍</div>
+            <div class="service-title">RAG Pipeline Architecture</div>
+            <p class="service-desc">Designing and implementing enterprise-grade Retrieval-Augmented Generation systems.
+              Vector database setup, embedding pipelines, hybrid search, reranking, and evaluation frameworks.</p>
+            <div class="service-num">02</div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon">🤖</div>
+            <div class="service-title">AI Agent Development</div>
+            <p class="service-desc">Building autonomous multi-step AI agents using LangChain, LangGraph, and custom
+              frameworks. Tool-using agents, ReAct patterns, memory systems, and multi-agent orchestration.</p>
+            <div class="service-num">03</div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-icon">⚙️</div>
+            <div class="service-title">MLOps &amp; Deployment</div>
+            <p class="service-desc">Full MLOps pipeline engineering — model versioning, CI/CD for ML, containerized
+              deployment with Docker/K8s, monitoring with Prometheus/Grafana, and A/B testing infrastructure.</p>
+            <div class="service-num">04</div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-4">
+            <div class="service-icon">✍️</div>
+            <div class="service-title">Prompt Engineering &amp; Optimization</div>
+            <p class="service-desc">Systematic prompt design, few-shot learning, chain-of-thought engineering, and
+              automated evaluation. Reducing hallucination, improving accuracy, and cutting token costs.</p>
+            <div class="service-num">05</div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-5">
+            <div class="service-icon">🎯</div>
+            <div class="service-title">AI Consulting &amp; Technical Advisory</div>
+            <p class="service-desc">Strategic AI roadmapping for startups and enterprises. Technology selection,
+              architecture reviews, team upskilling, and building an internal AI capability from the ground up.</p>
+            <div class="service-num">06</div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ========== PROJECTS ========== -->
+      <section id="projects">
+        <div class="section-header reveal">
+          <div class="section-label">My Work</div>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <p class="section-desc">A selection of production AI systems, research implementations, and open-source tools
+            I've built.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+          <button class="filter-btn" data-filter="llm" id="filter-llm">LLM</button>
+          <button class="filter-btn" data-filter="rag" id="filter-rag">RAG</button>
+          <button class="filter-btn" data-filter="mlops" id="filter-mlops">MLOps</button>
+          <button class="filter-btn" data-filter="agents" id="filter-agents">Agents</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <div class="project-card reveal" data-category="rag,llm">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-rag.png' %}" alt="Enterprise RAG System" />
+              <div class="project-overlay">
+                <a href="#" id="proj-rag-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">RAG</span>
+                <span class="project-tag">LLM</span>
+              </div>
+              <div class="project-title">Enterprise RAG Knowledge Base</div>
+              <p class="project-desc">A multi-tenant RAG system serving 50k+ users with hybrid vector + keyword search,
+                semantic reranking, and GPT-4 answer synthesis. Sub-1s latency at scale.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-1" data-category="agents,llm">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-agent.png' %}" alt="Multi-Agent Orchestration" />
+              <div class="project-overlay">
+                <a href="#" id="proj-agent-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Agents</span>
+                <span class="project-tag">LangGraph</span>
+              </div>
+              <div class="project-title">AI Agent Orchestration Framework</div>
+              <p class="project-desc">LangGraph-based multi-agent system with specialized sub-agents for research,
+                coding, and analysis. Persistent memory, tool-use, and human-in-the-loop approval gates.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-2" data-category="mlops">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-mlops.png' %}" alt="MLOps Platform" />
+              <div class="project-overlay">
+                <a href="#" id="proj-mlops-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">MLOps</span>
+                <span class="project-tag">Kubernetes</span>
+              </div>
+              <div class="project-title">ML Model Serving Platform</div>
+              <p class="project-desc">Kubernetes-native model serving infrastructure with auto-scaling, blue-green
+                deployments, A/B testing, and real-time drift detection using Evidently AI.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-3" data-category="llm">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-llm.png' %}" alt="LLM Fine-tuning" />
+              <div class="project-overlay">
+                <a href="#" id="proj-llm-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">Fine-tuning</span>
+              </div>
+              <div class="project-title">Domain LLM Fine-tuning Pipeline</div>
+              <p class="project-desc">End-to-end fine-tuning pipeline using QLoRA/LoRA on LLaMA-3. Custom data curation,
+                RLHF with human preference data, and automated evaluation with LLM-as-judge.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-4" data-category="llm,agents">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-chatbot.png' %}" alt="AI Chatbot" />
+              <div class="project-overlay">
+                <a href="#" id="proj-chatbot-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">Agents</span>
+              </div>
+              <div class="project-title">Intelligent Customer Support AI</div>
+              <p class="project-desc">Production AI support agent with multi-turn conversation memory, ticket escalation
+                logic, CRM integration, and sentiment-aware response tuning. 68% deflection rate.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-5" data-category="llm,rag">
+            <div class="project-thumb">
+              <img src="{% static 'main/images/project-prompt.png' %}" alt="Prompt Engineering Platform" />
+              <div class="project-overlay">
+                <a href="#" id="proj-prompt-link"><i class="ri-external-link-line"></i> View Project</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">RAG</span>
+              </div>
+              <div class="project-title">Prompt Optimization Platform</div>
+              <p class="project-desc">A/B testing and automated optimization platform for LLM prompts. DSPy-inspired
+                automatic prompt refinement, evaluation suite, and cost-performance tradeoff dashboard.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ========== SKILLS ========== -->
+      <section id="skills">
+        <div class="section-header reveal">
+          <div class="section-label">My Toolkit</div>
+          <h2 class="section-title">Skills &amp; <span>Expertise</span></h2>
+          <p class="section-desc">5+ years of building AI systems means a deep, opinionated toolkit across the full AI
+            engineering stack.</p>
+        </div>
+
+        <div class="skills-layout">
+
+          <!-- Technical Skills -->
+          <div>
+            <div class="skills-col-title reveal">
+              <i class="ri-code-s-slash-fill"></i> Technical Skills
+            </div>
+
+            <div class="skill-item reveal">
+              <div class="skill-header">
+                <span class="skill-name">Python</span>
+                <span class="skill-pct">96%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="96"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-1">
+              <div class="skill-header">
+                <span class="skill-name">LLM Engineering (GPT-4 / Claude / LLaMA)</span>
+                <span class="skill-pct">94%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="94"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-2">
+              <div class="skill-header">
+                <span class="skill-name">RAG Architecture &amp; Vector DBs</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="92"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-3">
+              <div class="skill-header">
+                <span class="skill-name">LangChain / LangGraph</span>
+                <span class="skill-pct">93%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="93"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-4">
+              <div class="skill-header">
+                <span class="skill-name">MLOps (Docker · K8s · MLflow)</span>
+                <span class="skill-pct">87%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="87"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-5">
+              <div class="skill-header">
+                <span class="skill-name">Prompt Engineering &amp; Optimization</span>
+                <span class="skill-pct">91%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="91"></div>
+              </div>
+            </div>
+
+            <div class="skill-item reveal reveal-delay-6">
+              <div class="skill-header">
+                <span class="skill-name">FastAPI / Django (Backend)</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-pct="88"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools Grid -->
+          <div>
+            <div class="skills-col-title reveal">
+              <i class="ri-tools-fill"></i> Tools &amp; Platforms
+            </div>
+            <div class="tools-grid">
+              <div class="tool-item reveal"><span>🐍</span><span>Python</span></div>
+              <div class="tool-item reveal reveal-delay-1"><span>🦜</span><span>LangChain</span></div>
+              <div class="tool-item reveal reveal-delay-2"><span>🤗</span><span>HuggingFace</span></div>
+              <div class="tool-item reveal reveal-delay-3"><span>🔥</span><span>PyTorch</span></div>
+              <div class="tool-item reveal reveal-delay-1"><span>☁️</span><span>AWS</span></div>
+              <div class="tool-item reveal reveal-delay-2"><span>🌩️</span><span>GCP</span></div>
+              <div class="tool-item reveal reveal-delay-3"><span>🐋</span><span>Docker</span></div>
+              <div class="tool-item reveal reveal-delay-4"><span>⚓</span><span>Kubernetes</span></div>
+              <div class="tool-item reveal reveal-delay-2"><span>📊</span><span>MLflow</span></div>
+              <div class="tool-item reveal reveal-delay-3"><span>🌲</span><span>Pinecone</span></div>
+              <div class="tool-item reveal reveal-delay-4"><span>🔷</span><span>Weaviate</span></div>
+              <div class="tool-item reveal reveal-delay-5"><span>📡</span><span>FastAPI</span></div>
+              <div class="tool-item reveal reveal-delay-3"><span>🐘</span><span>PostgreSQL</span></div>
+              <div class="tool-item reveal reveal-delay-4"><span>🔴</span><span>Redis</span></div>
+              <div class="tool-item reveal reveal-delay-5"><span>📈</span><span>Grafana</span></div>
+              <div class="tool-item reveal reveal-delay-6"><span>🐙</span><span>GitHub</span></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ========== TESTIMONIALS ========== -->
+      <section id="testimonials">
+        <div class="section-header reveal">
+          <div class="section-label">What Others Say</div>
+          <h2 class="section-title">Client <span>Testimonials</span></h2>
+          <p class="section-desc">Feedback from people I've had the privilege of working with.</p>
+        </div>
+
+        <div class="testimonials-carousel reveal">
+          <div class="testimonials-track">
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <span class="quote-icon">"</span>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                  Muhammad built our entire RAG-powered knowledge management system from scratch. The architecture is
+                  clean, scalable, and remarkably accurate. He didn't just deliver code — he delivered a system that our
+                  team can maintain and extend. Genuinely one of the best AI engineers I've worked with.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">SR</div>
+                  <div>
+                    <div class="author-name">Sarah Rahman</div>
+                    <div class="author-role">CTO, TechVault AI</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <span class="quote-icon">"</span>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                  We hired Muhammad to build our AI agent pipeline and he exceeded every expectation. He has a rare
+                  ability to translate complex AI research into working production systems. The multi-agent
+                  orchestration framework he designed handles our entire back-office automation and runs flawlessly.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">AK</div>
+                  <div>
+                    <div class="author-name">Ahmed Khan</div>
+                    <div class="author-role">Founder, NeuralBridge Labs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <span class="quote-icon">"</span>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                  Muhammad's MLOps work transformed how we deploy and monitor AI models. He reduced our deployment cycle
+                  from 2 weeks to 2 hours and built a monitoring system that caught model drift before it impacted
+                  users. His production-first thinking is exactly what AI teams need.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">JP</div>
+                  <div>
+                    <div class="author-name">James Parker</div>
+                    <div class="author-role">Head of AI, DataForge Solutions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Slide 1"></button>
+            <button class="carousel-dot" aria-label="Slide 2"></button>
+            <button class="carousel-dot" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="carousel-prev" aria-label="Previous">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="carousel-btn" id="carousel-next" aria-label="Next">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========== CONTACT ========== -->
+      <section id="contact">
+        <div class="section-header reveal">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact-layout">
+
+          <div class="contact-info">
+            <h3 class="reveal">Let's build something <span
+                style="background: linear-gradient(90deg,#00d4ff,#7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">intelligent</span>
+              together</h3>
+            <p class="reveal">
+              Whether you're looking to build an AI product, scale an existing ML system, or need strategic AI guidance
+              — I'm here to help. Let's talk.
+            </p>
+
+            <div class="contact-items">
+              <div class="contact-item reveal">
+                <div class="contact-icon">📧</div>
+                <div>
+                  <div class="contact-item-label">Email</div>
+                  <div class="contact-item-value">
+                    <a href="mailto:post2msaran@gmail.com">post2msaran@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-item reveal reveal-delay-1">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-item-label">Location</div>
+                  <div class="contact-item-value">Pakistan 🇵🇰 (Remote Worldwide)</div>
+                </div>
+              </div>
+              <div class="contact-item reveal reveal-delay-2">
+                <div class="contact-icon">⚡</div>
+                <div>
+                  <div class="contact-item-label">Response Time</div>
+                  <div class="contact-item-value">Within 24 hours</div>
+                </div>
+              </div>
+              <div class="contact-item reveal reveal-delay-3">
+                <div class="contact-icon">💼</div>
+                <div>
+                  <div class="contact-item-label">Availability</div>
+                  <div class="contact-item-value" style="color: #00d4ff;">✅ Open to opportunities</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/Muhammad-Saran" target="_blank" class="social-link" title="GitHub"
+                id="contact-social-github">
+                <i class="ri-github-fill"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-saran-a401ab305/" target="_blank" class="social-link"
+                title="LinkedIn" id="contact-social-linkedin">
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-card reveal reveal-delay-2">
+            <form id="contact-form" novalidate>
+              {% csrf_token %}
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@example.com"
+                    required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="contact-subject">Subject</label>
+                  <input type="text" id="contact-subject" name="subject" class="form-input"
+                    placeholder="What's this about?" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="contact-message">Message</label>
+                  <textarea id="contact-message" name="message" class="form-textarea"
+                    placeholder="Tell me about your project or opportunity..." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-send">
+                <i class="ri-send-plane-fill"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+    </main><!-- end main-content -->
+  </div><!-- end layout-wrapper -->
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2026 <span>Muhammad Saran</span>. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+
+</html>
