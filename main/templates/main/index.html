@@ -916,7 +916,9 @@
 
           <div class="contact-form-card reveal reveal-delay-2">
             <form id="contact-form" novalidate>
-              {% csrf_token %}
+              <input type="hidden" name="access_key" value="aaa35551-5c26-429f-8423-6650c907e448" />
+              <input type="hidden" name="subject" value="New Portfolio Contact" />
+              <input type="hidden" name="from_name" value="Muhammad Saran Portfolio" />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="contact-name">Your Name</label>

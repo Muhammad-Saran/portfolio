@@ -299,33 +299,35 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
       btn.style.opacity = '0.8';
 
-      // Prefer the CSRF token rendered into the form; fall back to cookie
-      const csrfInput = document.querySelector('input[name="csrfmiddlewaretoken"]');
-      const csrfToken = csrfInput ? csrfInput.value : (document.cookie.split(';')
-        .find(c => c.trim().startsWith('csrftoken='))
-        ?.split('=')[1] || '');
+      // Collect form fields
+      const accessKey = contactForm.querySelector('input[name="access_key"]').value;
+      const name     = contactForm.querySelector('input[name="name"]').value.trim();
+      const email    = contactForm.querySelector('input[name="email"]').value.trim();
+      const subject  = contactForm.querySelector('input[name="user_subject"]')
+                        ? contactForm.querySelector('input[name="user_subject"]').value.trim()
+                        : (contactForm.querySelector('#contact-subject')?.value.trim() || '');
+      const message  = contactForm.querySelector('textarea[name="message"]').value.trim();
 
-      const formData = new FormData(contactForm);
+      const payload = {
+        access_key: accessKey,
+        name,
+        email,
+        subject: `[Portfolio] ${subject}`,
+        message,
+        from_name: 'Muhammad Saran Portfolio',
+        replyto: email,
+      };
 
       try {
-        const res = await fetch('/contact/', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'X-CSRFToken': csrfToken },
-          body: formData,
-          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
         });
 
-        // Safely handle non-JSON error responses (e.g., Django 403/500 HTML pages)
-        let data;
-        const contentType = res.headers.get('content-type') || '';
-        if (contentType.includes('application/json')) {
-          data = await res.json();
-        } else {
-          const text = await res.text();
-          throw new Error(`Unexpected server response (${res.status}): ${text.substring(0,200)}`);
-        }
+        const data = await res.json();
 
-        if (res.ok && data.status === 'ok') {
+        if (data.success) {
           btn.innerHTML = '<i class="ri-check-double-line"></i> Message Sent!';
           btn.style.background = 'linear-gradient(90deg, #00c853, #69f0ae)';
           btn.style.opacity = '1';
@@ -336,18 +338,11 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = false;
           }, 4000);
         } else {
-          btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed — Try Again';
-          btn.style.background = 'linear-gradient(90deg, #ff4444, #cc0000)';
-          btn.style.opacity = '1';
-          btn.disabled = false;
-          setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.style.background = '';
-          }, 4000);
+          throw new Error(data.message || 'Submission failed');
         }
       } catch (err) {
         console.error('Contact form error:', err);
-        btn.innerHTML = '<i class="ri-wifi-off-line"></i> Network Error';
+        btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed — Try Again';
         btn.style.background = 'linear-gradient(90deg, #ff4444, #cc0000)';
         btn.style.opacity = '1';
         btn.disabled = false;
